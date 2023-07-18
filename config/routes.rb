@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :listings, only: %i[index show new create destroy]
+
+  namespace :momma do
+    resources :bookings, only: %i[index edit update]
+  end
 end
