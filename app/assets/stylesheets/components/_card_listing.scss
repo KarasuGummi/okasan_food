@@ -1,0 +1,41 @@
+
+/*Card pick*/
+.card-listing {
+  /*fixed*/
+  display: flex;
+  flex-direction: column;
+  /*customizable*/
+  height: 280px;
+  width: 350px;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0 0px 16px rgba(0, 0, 0, 0.3);
+}
+.card-listing img {
+  /*fixed*/
+  width: 100%;
+  min-height: 150px;
+  flex-grow: 1;
+  object-fit: cover;
+  /*customizable*/
+  object-position: 50% 50%;
+  border-radius: 4px 4px 0 0;
+}
+.card-listing-info {
+  /*customizable*/
+  padding: 24px 16px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.card-listing-info h5 {
+  /*customizable*/
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card-listing:hover {
+  /*customizable*/
+  transition: 0.2s ease-out;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
