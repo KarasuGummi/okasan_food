@@ -3,15 +3,15 @@ class Momma::BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
 
   def index
-    @bookings = current_user.bookings
+    @bookings = policy_scope([:momma, Booking])
   end
 
   def edit
-    authorize @booking
+    authorize([:momma, @booking])
   end
 
   def update
-    authorize @booking
+    authorize([:momma, @booking])
 
     if @booking.update(booking_params)
       redirect_to momma_bookings_path, notice: 'Booking was successfully updated.'
