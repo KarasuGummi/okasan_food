@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def pundit_policy_scoped?
+    params[:action] != 'index' || !devise_controller?
+  end
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
