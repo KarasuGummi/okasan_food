@@ -1,12 +1,50 @@
-.navbar-lewagon {
+.navbar-okasanfood {
   justify-content: space-between;
-  background: white;
+  background: $pink;
+  height: 80px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-okasanfood .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// Navbar title "Okasan Food"
+.navbar-title{
+  color: white;
+  margin: 0;
+  font-family: $title;
+  text-decoration: none;
+  font-size:  24px;
+  font-weight: 1000;
+  text-shadow:  0.5px 4px 3px gray;
+}
+//seach box
+.form-control{
+  width: 300px;
+  border-color: gray;
+  border-radius: 4px;
+  background-color: white;
+}
+
+// search button
+.btn-search {
+  border-color: gray;
+  border-width: 80;
+  border-radius: 4px;
+  background-color: white;
+}
+
+// login button
+.btn-login {
+  background-color: white;
+  border-color: gray;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+// dropdown
+a {
+  text-decoration: none;
+  color: black;
 }
