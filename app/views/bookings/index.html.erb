@@ -1,17 +1,23 @@
 <div class="container">
   <h3 class="my-3">My Requests</h3>
-  <div class="row justify-content-center">
+  <div class="booking-table row justify-content-center">
     <% if @bookings.any? %>
       <% @bookings.each do |booking| %>
-        <div class="col-8">
-        <p><%= booking.listing.name %></p>
-        <p><%= booking.listing.price %>JPY</p>
-        <% if booking.listing.photo.attached? %>
-          <%= image_tag booking.listing.photo %>
-        <% end %>
-        <p><%= booking.listing.status %></p>
+        <div class="booking-item col-8">
+          <% if booking.listing.photo.attached? %>
+            <div class="booking-photo">
+              <%= image_tag booking.listing.photo %>
+            </div>
+          <% end %>
+          <div class="booking-details">
+            <p><%= booking.listing.name %></p>
+            <p><%= booking.listing.price %>JPY</p>
+            <p><%= booking.listing.status %></p>
+          </div>
         </div>
       <% end %>
+    <% else %>
+      <p>You don't have any requests.</p>
     <% end %>
   </div>
 </div>
