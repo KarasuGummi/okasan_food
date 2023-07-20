@@ -11,17 +11,26 @@
       </div>
     </nav>
 
-    <div class="dropdown">
-      <button class="btn-login dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-         Log in
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <li><button class="dropdown-item" type="button"><%= link_to "Log in", "new_user_session_path" %></button></li>
-        <li><button class="dropdown-item" type="button"><%= link_to "Sign up", "new_user_registration_path" %></button></li>
-        <li><button class="dropdown-item" type="button"><%= link_to "Share your dish", "new_listing_path" %></button></li>
-      </ul>
-    </div>
-
-
+    <% if current_user %>
+      <div class="dropdown">
+        <button class="btn-login" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+         <%= image_tag 'user_icon.jpg' %>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><button class="dropdown-item" type="button"><%= link_to "Sign in", new_user_session_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Sign up", new_user_registration_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Share your dish", new_listing_path %></button></li>
+        </ul>
+      </div>
+    <% else %>
+      <div class="d-flex gap-2" >
+        <button class="btn-login" type="button">
+          <%= link_to "Sign in", new_user_session_path %>
+        </button>
+        <button class="btn-login" type="button">
+          <%= link_to "Sign up", new_user_registration_path %>
+        </button>
+      </div>
+    <% end %>
   </div>
 </div>
