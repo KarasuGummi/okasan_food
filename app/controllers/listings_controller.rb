@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
-  skip_authorization only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show]
+
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @listings = Listing.all
