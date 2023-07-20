@@ -15,3 +15,18 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   filter: grayscale(50%);
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+
+  footer {
+    margin-top: auto;
+    padding: 10px;
+  }
+}
