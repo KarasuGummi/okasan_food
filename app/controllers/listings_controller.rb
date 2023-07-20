@@ -1,10 +1,13 @@
 class ListingsController < ApplicationController
+  skip_authorization only: %i[index show]
+
   def index
     @listings = Listing.all
   end
 
   def new
     @listing = Listing.new
+    authorize @listing
   end
 
   def show
@@ -13,6 +16,7 @@ class ListingsController < ApplicationController
 
   def create
     @listing = Listing.new(listing_params)
+    authorize @listing
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -22,6 +26,7 @@ class ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find(params[:id])
+    authorize @listing
     @listing.destroy
     redirect_to listings_path, status: :see_other
   end
