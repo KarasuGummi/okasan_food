@@ -1,10 +1,12 @@
 class ListingPolicy < ApplicationPolicy
   def new?
     user.momma?
+    # for testing purposes change to true
   end
 
   def create?
     user.momma?
+    # for testing purposes change to true
   end
 
   def destroy?
