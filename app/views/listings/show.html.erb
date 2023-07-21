@@ -5,23 +5,24 @@
     <button class="pink-button">
       <%= link_to "< Back", root_path %>
     </button>
+    <% if @listing.photo.attached? %>
     <div class="card-product">
-     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+     <%= cl_image_tag @listing.photo.key, height: 280, width: 360, crop: :fill %>
       <div class="card-product-infos">
         <h2>Sake Onigiri</h2>
         <p>¥550</p>
         <p>Sake onigiri is wrapped with nori seaweed and contains grilled salmon filling.</p>
 
         <button class="pink-button">
-          <%= link_to "Request", listing_path %>
+          <%= link_to "Request", bookings_path %>
         </button>
       </div>
     </div>
-
+<% end %>
     <%# mom-card %>
     <div class="mom-card">
        <div class="mom-img">
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="mom-avatar-round" />
+          <img src="https://i.pravatar.cc/" />
           <h2>Mom's name</h2>
         </div>
         <div class="mom-info">
