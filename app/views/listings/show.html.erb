@@ -1,7 +1,37 @@
-<button class="pink-button">
-  <%= link_to "< Back", root_path %>
-</button>
+<div class="show-card">
+  <div class="container">
+  <%# food-card %>
+    <button class="pink-button">
+      <%= link_to "< Back", root_path %>
+    </button>
+    <div class="card-product">
+     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Sake Onigiri</h2>
+        <p>¥550</p>
+        <p>Sake onigiri is wrapped with nori seaweed and contains grilled salmon filling.</p>
 
-<button class="pink-button">
-  <%= link_to "Request", root_path %>
-</button>
+        <button class="pink-button">
+          <%= link_to "Request", new_listing_path %>
+        </button>
+      </div>
+    </div>
+
+    <%# mom-card %>
+    <div class="mom-card">
+       <div class="mom-img">
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="mom-avatar-round" />
+          <h2>Mom's name</h2>
+        </div>
+        <div class="mom-info">
+          <h1>Mom's info</h1>
+            <ul>
+              <li>Favorite dish to cook: Japanese food</li>
+              <li>Work: Nurse</li>
+              <li>Lunguage: English</li>
+            </ul>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>

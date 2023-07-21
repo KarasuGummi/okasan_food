@@ -1,39 +1,73 @@
-.card-show {
+// food-card - food img + discreption
+
+.card-product {
   overflow: hidden;
+  height: 360px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  font-family: $body-font;
 }
 
-.card-show > img {
-  height: 200px;
-  width: 100%;
+.card-product img {
+  height: 100%;
+  width: 360px;
   object-fit: cover;
+  margin-right: 15px;
 }
 
-.card-show h2 {
-  font-size: 16px;
+.card-product h2 {
+  font-size: 32px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-show p {
-  font-size: 12px;
+.card-product p {
+  font-size: 20px;
+  line-height: 1.4;
   opacity: .7;
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 8px;
+  width: 100%;
 }
 
+.card-product .card-product-infos {
+  padding: 16px;
+  width: 100%;
+}
 
-.card-show .card-show-infos {
+// mom-card
+.mom-img {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
+  background-color: white;
 }
 
-.card-show-infos .card-show-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+.mom-img img{
+  border-radius: 50px;
+  margin-left: 30px;
+  width: 72px;
+  height: 72px;
+}
+
+.mom-img h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 30px;
+  }
+
+.mom-info {
+  align-items: center;
+  background-color: white;
+  height: 200px;
+  padding: 30px;
+}
+
+.mom-info h1 {
+  margin-bottom: 20px;
 }
