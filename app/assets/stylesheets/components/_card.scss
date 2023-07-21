@@ -1,14 +1,17 @@
 // food-card - food img + discreption
 
+
 .card-product {
   overflow: hidden;
-  height: 360px;
+  height: 280px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   background-size: cover;
   font-family: $body-font;
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
 }
 
 .card-product img {
@@ -16,6 +19,14 @@
   width: 360px;
   object-fit: cover;
   margin-right: 15px;
+  border-radius: 12px;
+}
+
+.card-product-infos {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  margin: 15px;
+  height: 260px;
 }
 
 .card-product h2 {
@@ -45,6 +56,8 @@
   align-items: center;
   position: relative;
   background-color: white;
+  border-bottom:  rgb(225, 224, 224);
+  border-bottom-style: dashed;
 }
 
 .mom-img img{
@@ -66,6 +79,7 @@
   background-color: white;
   height: 200px;
   padding: 30px;
+  border-radius: 0 0 12px 12px;
 }
 
 .mom-info h1 {
