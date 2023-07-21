@@ -1,16 +1,22 @@
 class ListingPolicy < ApplicationPolicy
   def new?
-    user.momma?
+    true
+    # user.momma?
     # for testing purposes change to true
   end
 
   def create?
-    user.momma?
+    true
+    # user.momma?
     # for testing purposes change to true
   end
 
   def destroy?
     user.momma && record.user == user
+  end
+
+  def show?
+    true
   end
 
   class Scope < Scope

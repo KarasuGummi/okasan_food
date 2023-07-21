@@ -1,8 +1,6 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  before_action :authenticate_user!, except: %i[index show]
-
   def index
     @listings = Listing.all
   end
@@ -14,14 +12,16 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    authorize @listing
   end
 
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.build(listing_params)
     authorize @listing
     if @listing.save
       redirect_to listing_path(@listing)
     else
+      puts @listing.errors.full_messages
       render 'new'
     end
   end
@@ -36,6 +36,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :category, :price)
+    params.require(:listing).permit(:name, :category, :price, :photo)
   end
 end
