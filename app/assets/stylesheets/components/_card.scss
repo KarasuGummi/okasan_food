@@ -1,0 +1,89 @@
+// food-card - food img + discreption
+
+
+.card-product {
+  overflow: hidden;
+  height: 280px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  font-family: $body-font;
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-product img {
+  height: 100%;
+  width: 360px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-product-infos {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  margin: 15px;
+  height: 260px;
+}
+
+.card-product h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  width: 100%;
+}
+
+// mom-card
+.mom-img {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-bottom:  rgb(225, 224, 224);
+  border-bottom-style: dashed;
+}
+
+.mom-img img{
+  border-radius: 50px;
+  margin-left: 30px;
+  width: 72px;
+  height: 72px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.mom-img h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 30px;
+  }
+
+.mom-info {
+  align-items: center;
+  background-color: white;
+  height: 200px;
+  padding: 30px;
+  border-radius: 0 0 12px 12px;
+}
+
+.mom-info h1 {
+  margin-bottom: 20px;
+}

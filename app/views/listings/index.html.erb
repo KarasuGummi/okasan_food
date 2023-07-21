@@ -1,30 +1,43 @@
+<%# banner %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path("kitchen.jpg") %>');">
-  <div class="container">
-    <h1 class="text-center">Okasan Food</h1>
-    <p class="text-center">Enjoy homemade meals</p>
-  </div>
+  <h1 class="text-center">Okasan Food</h1>
+  <p class="text-center">Enjoy homemade meals</p>
 </div>
 
+<%# listings %>
 <div class="container">
-  <h3 class="my-3">Listings</h3>
-  <div class="row justify-content-center">
-    <% if @listings.any? %>
-      <% @listings.each do |listing| %>
-        <div class="col-md-4 col-12">
+   <h3 class="my-3">Food Listings</h3>
+    <div class="cards">
+      <% if @listings.any? %>
+        <% @listings.each do |listing| %>
+          <div >
 
         <%# Uncomment once active storage has been installed %>
 
           <% if listing.photo.attached? %>
-            <div class="card m-4">
+            <div class="card">
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, crop: :fill%>')">
-              <h3><strong><%= listing.name %></strong></h3>
-              <%= link_to '', listing_path(listing), class: "card-link" %>
+                <h3><strong><%= listing.name %></strong></h3>
+                <%= link_to '', listing_path(listing), class: "card-link" %>
               </div>
+
+              <div class="description">
+                <p>Description</p>
+              </div>
+
+              <div class="card-info">
+                <div class="price">
+                <p>¥<%= listing.price %></p>
+                </div>
+                <div class="pink-button" style="padding: 10px 22px;">
+                  <%= link_to "Show more", listing_path(listing) %>
+                </div>
+              </div>
+
             </div>
           <% end %>
-
         </div>
-      <% end %>
-    <% end %>
+       <% end %>
+     <% end %>
+    </div>
   </div>
-</div>

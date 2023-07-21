@@ -1,4 +1,61 @@
 
+
+.card-link{
+  border-radius: 12px;
+  font-family: $body-font;
+
+}
+.cards {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.description p {
+  padding: 0;
+  justify-content: center;
+}
+
+
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0);
+  margin: 24px;
+  border-radius: 12px;
+}
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  align-items: center;
+}
+
+.price {
+  text-decoration: underline;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.description {
+  margin: 20px;
+  font-size: 20px;
+}
+
+// -------------------
+// -------------------
+
 /*Card pick*/
 .card-listing {
   /*fixed*/
