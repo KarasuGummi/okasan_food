@@ -9,8 +9,8 @@
     <div class="card-product">
      <%= cl_image_tag @listing.photo.key, height: 280, width: 360, crop: :fill %>
       <div class="card-product-infos">
-        <h2>Sake Onigiri</h2>
-        <p>¥550</p>
+        <h2><%= @listing.name %></h2>
+        <p>¥<%= @listing.price %></p>
         <p>Sake onigiri is wrapped with nori seaweed and contains grilled salmon filling.</p>
 
         <button class="pink-button">
