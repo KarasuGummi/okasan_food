@@ -1,0 +1,19 @@
+  .pink-button {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: $pink;
+    transition: background 0.3s ease;
+    font-family: $body-font;
+    font-size:  16px;
+    border: none;
+    font-weight: 200;
+    box-shadow: 8px 8px 8px gray;
+	  border-radius: 100vh;
+  }
+
+  .pink-button:hover {
+    background: $orange-pink;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+  }
