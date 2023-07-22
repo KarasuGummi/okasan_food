@@ -5,12 +5,50 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-puts "Cleaning up database..."
+puts 'Cleaning up database...'
 User.destroy_all
-puts "Database cleaned"
-puts "Start creating users....."
-kevin = User.create!(first_name: "kevin", last_name: "kevin", email: "kevin@app.com", phone: "08034556778", momma: true, address: "Oita", password: "secret123")
-User.create!(first_name: "curtis", last_name: "curtis", email: "curtis@app.com", phone: "08034556778", momma: true, address: "Saga", password: "secret123")
-User.create!(first_name: "favi", last_name: "juri", email: "juri@app.com", phone: "08034556778", momma: false, address: "Kiba", password: "secret123")
-User.create!(first_name: "favi", last_name: "favi", email: "favi@app.com", phone: "08034556778", momma: false, address: "Sanda", password: "secret123")
-puts "Users created"
+
+puts 'Database cleaned!'
+puts 'Creating data...'
+
+User.create!(
+  first_name: 'Kevin',
+  last_name: 'Collier',
+  email: 'kevin@app.com',
+  phone: Faker::PhoneNumber.cell_phone_in_e164,
+  momma: true,
+  address: Faker::Address.city,
+  password: 'secret123'
+)
+
+User.create!(
+  first_name: 'Curtis',
+  last_name: 'Lu',
+  email: 'curtis@app.com',
+  phone: Faker::PhoneNumber.cell_phone_in_e164,
+  momma: true,
+  address: Faker::Address.unique.city,
+  password: 'secret123'
+)
+
+User.create!(
+  first_name: 'Juri',
+  last_name: 'Kato',
+  email: 'juri@app.com',
+  phone: Faker::PhoneNumber.cell_phone_in_e164,
+  momma: false,
+  address: Faker::Address.unique.city,
+  password: 'secret123'
+)
+
+User.create!(
+  first_name: 'Favi',
+  last_name: 'Fernandez',
+  email: 'favi@app.com',
+  phone: Faker::PhoneNumber.cell_phone_in_e164,
+  momma: false,
+  address: Faker::Address.unique.city,
+  password: 'secret123'
+)
+
+puts 'Database seeded!'
