@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'Cleaning up database...'
 User.destroy_all
+Listing.destroy_all
 
 puts 'Database cleaned!'
 puts 'Creating data...'
@@ -50,5 +51,13 @@ User.create!(
   address: Faker::Address.unique.city,
   password: 'secret123'
 )
+
+8.times do
+  Listing.create!(
+    name: Faker::Food.dish,
+    category: Faker::Food.ethnic_category,
+    price: Faker::Commerce.price
+  )
+end
 
 puts 'Database seeded!'
