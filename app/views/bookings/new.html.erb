@@ -1,6 +1,7 @@
 
 
 <%# form for booking list %>
+<div class=“container m-5”>
 <div class=“row justify-content-center m-5”>
   <div class=“col-6">
     <%= simple_form_for(@booking) do |f| %>
@@ -10,7 +11,7 @@
         <%= f.input :date_time %>
       </div>
 
-      <div class=“form-inputs”>
+      <%# <div class=“form-inputs”>
         <%= f.input :status %>
       </div>
 
@@ -18,14 +19,10 @@
         <%= f.button :submit %>
       </div>
     <% end %>
-    </div>
-    </div>
-    </div>
+      </div>
+  </div>
+</div>
 
-<div class=“container m-5”>
-  <h1 class=“text-center”>Add a listng :Food:</h1>
-  <%# <%= render 'bookings/form', booking: @booking %>
-  <br>
-  <div class=“text-center”>
-    <%# <%= link_to “Return to all listings”, listings_path %> 
- </div>
+  <%# <%= link_to "Submit", bookings_path %>
+
+    <%# <%= link_to “Return to all listings”, listings_path %>
