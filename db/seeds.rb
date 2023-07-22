@@ -7,8 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'Cleaning up database...'
 User.destroy_all
-
+Listing.destroy_all
 puts 'Database cleaned!'
+
 puts 'Creating data...'
 
 User.create!(
@@ -51,4 +52,12 @@ User.create!(
   password: 'secret123'
 )
 
+5.times do
+  Listing.create!(
+    name: Faker::Food.dish,
+    category: Faker::Food.ethnic_category,
+    price: Faker::Number.between(from: 20, to: 100),
+    # user_id: 1 please help on thhis part
+  )
+end
 puts 'Database seeded!'
