@@ -16,7 +16,7 @@
           <p><%= @listing.description %></p>
 
           <button class="pink-button">
-            <%= link_to "Request", new_booking_path %>
+            <%= link_to "Request", new_listing_booking_path(@listing) %>
           </button>
         </div>
       </div>
