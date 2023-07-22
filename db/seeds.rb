@@ -59,6 +59,7 @@ User.create!(
     name: Faker::Food.dish,
     category: Faker::Food.ethnic_category,
     price: Faker::Commerce.price,
+    description: Faker::Food.description,
     user: User.first
   )
   file = URI.open(Faker::LoremFlickr.image(size: '300x300', search_terms: ['food']))

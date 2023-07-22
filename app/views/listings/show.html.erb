@@ -11,7 +11,8 @@
       <div class="card-product-infos">
         <h2><%= @listing.name %></h2>
         <p>¥<%= @listing.price %></p>
-        <p>Sake onigiri is wrapped with nori seaweed and contains grilled salmon filling.</p>
+        <p><%= @listing.description %></p>
+
 
         <button class="pink-button">
           <%= link_to "Request", new_booking_path %>
@@ -29,7 +30,7 @@
         <div class="mom-info">
           <h1>Mom's information(optional)</h1>
             <ul>
-              <li>Favorite dish to cook: Japanese food</li>
+              <li>Favorite dish to cook: <%= @listing.category %> food</li>
               <li>Work: Nurse</li>
               <li>Lunguage: English</li>
             </ul>
