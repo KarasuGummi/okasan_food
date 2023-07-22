@@ -1,29 +1,33 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking).includes(:listing)
   end
 
   def show
     @booking = Booking.find(params[:id])
+    @listing = Listing.find(params[:listing_id])
   end
 
   def new
     @booking = Booking.new
+    @listing = Listing.find(params[:listing_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@bookings)
+      redirect_to booking_path(@bookings), notice: "Booking was successfully created!"
     else
-      render 'new'
+      render 'listings/show'
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bookings_path, status: :see_other
+    redirect_to bookings_path, status: :see_other, notice: "Bookmark was succesfully deleted."
   end
 
   private
