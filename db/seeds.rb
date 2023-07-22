@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'open-uri'
+
 puts 'Cleaning up database...'
 User.destroy_all
 Listing.destroy_all
@@ -52,12 +54,15 @@ User.create!(
   password: 'secret123'
 )
 
-8.times do
-  Listing.create!(
+9.times do
+  food = Listing.create!(
     name: Faker::Food.dish,
     category: Faker::Food.ethnic_category,
-    price: Faker::Commerce.price
+    price: Faker::Commerce.price,
+    user: User.first
   )
+  file = URI.open(Faker::LoremFlickr.image(size: '300x300', search_terms: ['food']))
+  food.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
 end
 
 puts 'Database seeded!'
