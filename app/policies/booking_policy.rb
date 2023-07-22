@@ -25,5 +25,3 @@ class BookingPolicy < ApplicationPolicy
   end
 end
 
-
-# 

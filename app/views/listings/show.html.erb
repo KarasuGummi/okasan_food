@@ -5,7 +5,7 @@
     <button class="pink-button">
       <%= link_to "< Back", root_path %>
     </button>
-    <% if @listing.photo.attached? %>
+    <% if @listing.photo.attached?%>
     <div class="card-product">
      <%= cl_image_tag @listing.photo.key, height: 280, width: 360, crop: :fill %>
       <div class="card-product-infos">
@@ -14,12 +14,13 @@
         <p>Sake onigiri is wrapped with nori seaweed and contains grilled salmon filling.</p>
 
         <button class="pink-button">
-          <%= link_to "Request", new_booking_path %>
+          <%= link_to "Request", new_listing_booking_path(@listing) %>
         </button>
       </div>
     </div>
-<% end %>
-    <%# mom-card %>
+    <% end %>
+
+
     <div class="mom-card">
        <div class="mom-img">
           <img src="https://i.pravatar.cc/" />
