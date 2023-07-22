@@ -15,10 +15,8 @@ class ListingsController < ApplicationController
     authorize @listing
   end
 
-
   def create
-    @listing = Listing.new(listing_params)
-    @listing.user = current_user
+    @listing = current_user.listings.build(listing_params)
     authorize @listing
     if @listing.save
       redirect_to listing_path(@listing)

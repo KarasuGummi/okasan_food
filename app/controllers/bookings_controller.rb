@@ -14,20 +14,17 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     authorize @booking
-    @listing = Listing.find(params[:listing_id])
+    # @listing = Listing.find(params[:id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @listing = Listing.find(params[:listing_id])
-    @booking.listing = @listing
-    @booking.user = current_user
+    authorize @booking
     if @booking.save
-      redirect_to bookings_path, notice: "Booking was successfully created!"
+      redirect_to booking_path(@bookings), notice: "Booking was successfully created!"
     else
       render 'listings/show'
     end
-    authorize @booking
   end
 
   def destroy
