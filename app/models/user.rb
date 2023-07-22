@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :bookings
-  has_many :listings
+  has_many :bookings, dependent: :delete_all
+  has_many :listings, dependent: :delete_all
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
