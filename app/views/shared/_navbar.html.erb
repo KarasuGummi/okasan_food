@@ -17,8 +17,8 @@
          <%= image_tag 'user_icon.jpg' %>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><button class="dropdown-item" type="button"><%= link_to "Sign in", new_user_session_path %></button></li>
-          <li><button class="dropdown-item" type="button"><%= link_to "Sign up", new_user_registration_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , method: :delete%></button></li>
+          <%# <li><button class="dropdown-item" type="button"><%= link_to "Sign up", new_user_registration_path %></button></li>
           <li><button class="dropdown-item" type="button"><%= link_to "Share your dish", new_listing_path %></button></li>
         </ul>
       </div>
