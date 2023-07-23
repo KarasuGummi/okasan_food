@@ -8,13 +8,16 @@ h3 {
 // category tag
 .category-tag{
   display: inline-block;
-	margin: 8px 8px;
-	padding: 0 8px 4px;
+	margin: 8px 0;
+	padding: 4px;
 	text-decoration: none;
 	color: white;
 	background-color: $orange-pink;
 	border: 1px solid #E74646;
 	border-left: 5px solid #E74646;
+  box-shadow: 0 0 10px rgba(0,0,0,0);
+  height: 40px;
+  text-align: left;
 }
 
 .category-tag p {
