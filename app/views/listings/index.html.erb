@@ -14,28 +14,30 @@
         <% @listings.each do |listing| %>
           <div >
 
-        <%# Uncomment once active storage has been installed %>
-
+<%# Uncomment once active storage has been installed %>
           <% if listing.photo.attached? %>
             <div class="card">
+<%# card-img %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, crop: :fill%>')">
-                <h3><strong><%= listing.name %></strong></h3>
-                <%= link_to '', listing_path(listing), class: "card-link" %>
+                <%= link_to '', listing_path(listing) %>
+              <div class="category-tag">
+                <p><%= listing.category %></p>
               </div>
-
+              </div>
+<%# card-info (name/description)%>
               <div class="description">
+                <h3><strong><%= listing.name %></strong></h3>
                 <p><%= listing.description %></p>
               </div>
-
+<%# card-info (price/show button)%>
               <div class="card-info">
                 <div class="price">
-                <p>¥<%= listing.price %></p>
+                  <p>¥<%= listing.price %></p>
                 </div>
                 <div class="pink-button" style="padding: 10px 22px;">
                   <%= link_to "Show more", listing_path(listing) %>
                 </div>
               </div>
-
             </div>
           <% end %>
         </div>
