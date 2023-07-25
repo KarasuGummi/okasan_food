@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
 
   namespace :momma do
-    resources :listings, only: %i[index edit update]
+    resources :listings, only: %i[index edit update destroy]
   end
 end
