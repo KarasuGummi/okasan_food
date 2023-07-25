@@ -9,10 +9,12 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 240px;
+  height: 280px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  filter: grayscale(50%);
+  // filter: grayscale(5%);
+  filter: brightness(110%);
+
   display: flex;
   padding: 8px;
 
@@ -29,7 +31,7 @@
 
 // <%# card-info (name/description)%>
 .description {
-  height: 200px;
+  height: 170px;
   overflow: hidden;
   h3 {
     text-align: left;
