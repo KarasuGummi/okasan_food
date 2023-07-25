@@ -1,22 +1,3 @@
-<div class="container">
-  <h3 class="my-3">My Requests</h3>
-  <%# <div class="justify-content-center"> %>
-    <% if @bookings.any? %>
-      <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <% if booking.listing.photo.attached? %>
-              <%= image_tag booking.listing.photo %>
-          <% end %>
-          <div class="card-product-infos">
-            <h1><%= booking.listing.name %></h1>
-            <h2><%= booking.listing.price %>JPY</h2>
-            <p><%#= booking.listing.status %></p>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <p>You don't have any requests.</p>
-    <% end %>
-  <%# </div> %>
-
-</div>
+<br>
+<%= render "shared/list_groups" %>
+<br>

@@ -1,32 +1,42 @@
 <div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h2>Sign up</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="bg-white rounded-4 p-3 shadow">
+        <h2 class="text-center">Create a new account</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
-
-          <div class="form-inputs">
+          <div class="form-group">
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email" }%>
+                        input_html: { autocomplete: "email", class: "form-control w-100 py-2" }%>
+          </div>
+          <div class="form-group">
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password", class: "form-control w-100 py-2" } %>
+          </div>
+          <div class="form-group">
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        input_html: { autocomplete: "new-password", class: "form-control w-100 py-2" } %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+
+
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Sign up", class: "btn btn-outline-info w-100 py-2" %>
           </div>
         <% end %>
-
-        <%= render "devise/shared/links" %>
+        <br>
+        <hr>
+        <div>
+          <a class="py-2 d-flex align-items-center" href="/" role="button" aria-label="Back to Home">
+            Back Home
+          </a>
+        </div>
       </div>
     </div>
   </div>

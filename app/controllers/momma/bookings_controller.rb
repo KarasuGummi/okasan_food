@@ -3,7 +3,7 @@ class Momma::BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update]
 
   def index
-    @bookings = policy_scope([:momma, Booking])
+    @bookings = policy_scope([:momma, Booking]).includes(:listing)
   end
 
   def edit
@@ -11,6 +11,7 @@ class Momma::BookingsController < ApplicationController
   end
 
   def update
+    @booking = current_user.bookings.find(params[:id])
     authorize([:momma, @booking])
 
     if @booking.update(booking_params)

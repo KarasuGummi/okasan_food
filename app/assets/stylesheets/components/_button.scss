@@ -10,10 +10,34 @@
     font-weight: 200;
     box-shadow: 8px 8px 8px gray;
 	  border-radius: 100vh;
+
+    &:hover {
+      background: $orange-pink;
+      color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0);
+    }
   }
 
-  .pink-button:hover {
-    background: $orange-pink;
+
+
+  .delete-button {
     color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0);
+    font-size: 40px;
+    margin: 0 0 0 auto;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  .accept-button {
+    color: white;
+    font-size: 16px;
+    background-color: $orange-pink;
+  }
+
+  .decline-button {
+    color: $red;
+    font-size: 16px;
+    background-color: $light-pink;
   }
