@@ -21,20 +21,20 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
 <%# after sign in / other menu items for momma %>
           <li><button class="dropdown-item" type="button"><%= link_to "Your dish", momma_bookings_path %></button></li>
-          <li><button class="dropdown-item" type="button"><%= link_to "Response to your customer", momma_bookings_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Your bookings"  %></button></li>
           <li><button class="dropdown-item" type="button"><%= link_to "Share your dish", new_listing_path %></button></li>
           -------------------
           <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
 <%# after sign in / other menu items for user %>
       <% else %>
         <div class="dropdown">
-        <button class="btn-login" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-utensils" style="font-size: 30px;"></i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><button class="dropdown-item" type="button"><%= link_to "My Requests",  bookings_path %></button></li>
-          <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
-        </ul>
+          <button class="btn-login" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-utensils" style="font-size: 30px;"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button"><%= link_to "My Requests",  bookings_path %></button></li>
+            <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
+          </ul>
         </div>
       <% end %>
 <%# before sign in %>
@@ -48,5 +48,6 @@
         </button>
       </div>
     <% end %>
+  </div>
   </div>
 </div>
