@@ -1,0 +1,30 @@
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h1 class="text-center">My Requests</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% if @bookings.any? %>
+        <% @bookings.each do |booking| %>
+          <% if booking.listing.photo.attached? %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <%= image_tag booking.listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
+                <div class="card-body">
+                  <p class="card-text"> <%= booking.listing.name %> </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                    </div>
+                    <small class="text-body-secondary"> <%= booking.listing.price %>JPY</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>You don't have any requests.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
