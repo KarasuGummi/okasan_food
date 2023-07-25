@@ -1,8 +1,9 @@
 // homepage card-listing(food item)
 .cards {
+  padding: 0 55px;
   border: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .card-category {
