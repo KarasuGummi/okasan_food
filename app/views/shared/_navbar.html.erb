@@ -17,9 +17,13 @@
          <%= image_tag 'user_icon.jpg' %>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
-          <%# <li><button class="dropdown-item" type="button"><%= link_to "Sign up", new_user_registration_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Your Requests",  bookings_path %></button></li>
+          <li><button class="dropdown-item" type="button"><%= link_to "Your dish", momma_bookings_path %></button></li>
           <li><button class="dropdown-item" type="button"><%= link_to "Share your dish", new_listing_path %></button></li>
+          -------------------
+          <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
+
+
         </ul>
       </div>
     <% else %>
