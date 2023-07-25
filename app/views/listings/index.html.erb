@@ -1,39 +1,48 @@
 <%# banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path("kitchen.jpg") %>');">
-  <h1 class="text-center">Okasan Food</h1>
-  <p class="text-center">Enjoy homemade meals</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path("mother_photo.jpg") %>');">
+  <div class="container">
+    <h1 class="text-center">Okasan Food</h1>
+    <p class="text-center">Enjoy homemade meals</p>
+  </div>
 </div>
 
 <%# listings %>
 <div class="container">
-   <h3 class="my-3">Food Listings</h3>
+  <h3>From Mom's Kitchen with Love: Authentic Flavors, Delivered Fresh</h3>
     <div class="cards">
       <% if @listings.any? %>
         <% @listings.each do |listing| %>
           <div >
 
-        <%# Uncomment once active storage has been installed %>
-
+<%# Uncomment once active storage has been installed %>
           <% if listing.photo.attached? %>
             <div class="card">
+<%# card-img %>
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path listing.photo.key, crop: :fill%>')">
-                <h3><strong><%= listing.name %></strong></h3>
-                <%= link_to '', listing_path(listing), class: "card-link" %>
+                <%= link_to '', listing_path(listing) %>
+                <div class="category-tag">
+                  <p><%= listing.category %></p>
+                </div>
+                <div class="delete-button">
+                <i class="fa-regular fa-circle-xmark"></i>
+                  <%#  %>
+                  <%# <%= link_to  '削除' ,  root_path , method :  : delete %>
+                </div>
               </div>
-
+<%# card-info (name/description)%>
               <div class="description">
+                <h3><strong><%= listing.name %></strong></h3>
                 <p><%= listing.description %></p>
               </div>
-
+<%# card-info (price/show button)%>
               <div class="card-info">
                 <div class="price">
-                <p>¥<%= listing.price %></p>
+                  <p>¥<%= listing.price %></p>
                 </div>
                 <div class="pink-button" style="padding: 10px 22px;">
                   <%= link_to "Show more", listing_path(listing) %>
                 </div>
               </div>
-
             </div>
           <% end %>
         </div>

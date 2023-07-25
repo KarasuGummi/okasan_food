@@ -1,2 +1,38 @@
-<h1>Test</h1>
-<%= @bookings %>
+<div class="container">
+  <h3 class="my-3">My Bookings</h3>
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <div class="card-product">
+          <% if booking.listing.photo.attached? %>
+              <%= image_tag booking.listing.photo %>
+          <% end %>
+          <div class="card-product-infos">
+            <h1><%= booking.listing.name %></h1>
+            <h2><%= booking.listing.price %>JPY</h2>
+            <p><%= booking.date_time %></p>
+            <div class="booking-actions">
+              <% if booking.pending? %>
+                <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
+                  <div class="button-container">
+                    <%= f.submit 'Accept', class: 'btn btn-info' %>
+                  </div>
+                  <% end %>
+
+                <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
+                  <%= f.input :status, as: :hidden, input_html: { value: 'declined' } %>
+                  <div class="button-container">
+                    <%= f.submit 'Reject', class: 'btn btn-light' %>
+                  </div>
+                <% end %>
+              <% else %>
+                <p class='booking-tag'><%= booking.status %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>You don't have any bookings.</p>
+    <% end %>
+</div>
