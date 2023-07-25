@@ -13,7 +13,7 @@
                   <p class="card-text"> <%= booking.listing.name %> </p>
                   <small class="text-body-secondary"> <%= booking.listing.price %>JPY</small>
                   <br>
-                  <small class="text-body-secondary"> <%= booking.date_time.strftime('%B %d, %Y - %I:%M %p') %></small>
+                  <small class="text-body-secondary"> <strong><%= booking.date_time.strftime('%B %d, %Y - %I:%M %p') %></strong></small>
 
                   <div class="d-flex justify-content-between align-items-center booking">
                     <div class="booking-actions">
@@ -21,14 +21,14 @@
                         <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
                           <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
                           <div class="button-container">
-                            <%= f.submit 'Accept', class: 'btn btn-info' %>
+                            <%= f.submit 'Accept', class: 'btn accept-button' %>
                           </div>
                           <% end %>
 
                         <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
                           <%= f.input :status, as: :hidden, input_html: { value: 'declined' } %>
                           <div class="button-container">
-                            <%= f.submit 'Reject', class: 'btn btn-light' %>
+                            <%= f.submit 'Reject', class: 'btn decline-button' %>
                           </div>
                         <% end %>
                       <% else %>
