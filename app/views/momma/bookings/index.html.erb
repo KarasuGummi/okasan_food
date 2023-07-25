@@ -1,38 +1,49 @@
-<div class="container">
-  <h3 class="my-3">My Bookings</h3>
-    <% if @bookings.any? %>
-      <% @bookings.each do |booking| %>
-        <div class="card-product">
-          <% if booking.listing.photo.attached? %>
-              <%= image_tag booking.listing.photo %>
-          <% end %>
-          <div class="card-product-infos">
-            <h1><%= booking.listing.name %></h1>
-            <h2><%= booking.listing.price %>JPY</h2>
-            <p><%= booking.date_time %></p>
-            <div class="booking-actions">
-              <% if booking.pending? %>
-                <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
-                  <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
-                  <div class="button-container">
-                    <%= f.submit 'Accept', class: 'btn btn-info' %>
-                  </div>
-                  <% end %>
 
-                <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
-                  <%= f.input :status, as: :hidden, input_html: { value: 'declined' } %>
-                  <div class="button-container">
-                    <%= f.submit 'Reject', class: 'btn btn-light' %>
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h1 class="text-center">Requested Orders</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% if @bookings.any? %>
+        <% @bookings.each do |booking| %>
+          <% if booking.listing.photo.attached? %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <%= image_tag booking.listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
+                <div class="card-body">
+                  <p class="card-text"> <%= booking.listing.name %> </p>
+                  <small class="text-body-secondary"> <%= booking.listing.price %>JPY</small>
+                  <br>
+                  <small class="text-body-secondary"> <strong><%= booking.date_time.strftime('%B %d, %Y - %I:%M %p') %></strong></small>
+
+                  <div class="d-flex justify-content-between align-items-center booking">
+                    <div class="booking-actions">
+                      <% if booking.pending? %>
+                        <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
+                          <%= f.input :status, as: :hidden, input_html: { value: 'accepted' } %>
+                          <div class="button-container">
+                            <%= f.submit 'Accept', class: 'btn accept-button' %>
+                          </div>
+                          <% end %>
+
+                        <%= simple_form_for booking, url: momma_booking_path(booking) do |f| %>
+                          <%= f.input :status, as: :hidden, input_html: { value: 'declined' } %>
+                          <div class="button-container">
+                            <%= f.submit 'Reject', class: 'btn decline-button' %>
+                          </div>
+                        <% end %>
+                      <% else %>
+                        <p class='booking-tag'><%= booking.status %></p>
+                      <% end %>
+                    </div>
                   </div>
-                <% end %>
-              <% else %>
-                <p class='booking-tag'><%= booking.status %></p>
-              <% end %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>You don't have any requests.</p>
       <% end %>
-    <% else %>
-      <p>You don't have any bookings.</p>
-    <% end %>
+    </div>
+  </div>
 </div>
