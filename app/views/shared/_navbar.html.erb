@@ -33,6 +33,7 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li><button class="dropdown-item" type="button"><%= link_to "My Requests",  bookings_path %></button></li>
+             -------------------
             <li><button class="dropdown-item" type="button"><%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete } %></button></li>
           </ul>
         </div>
