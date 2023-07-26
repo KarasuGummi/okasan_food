@@ -50,6 +50,8 @@ gem "devise"
 gem "faker"
 gem "cloudinary"
 gem "pundit"
+gem "pg_search"
+gem "table_print"
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

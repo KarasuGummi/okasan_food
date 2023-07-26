@@ -4,10 +4,14 @@
 
     <nav class="navbar-search">
       <div class="container-fluid">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search for food" aria-label="Search">
-          <button class="btn-search" type="submit">Search</button>
-        </form>
+            <%= form_with url: listings_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control me-2",
+                    placeholder: "Search for food"
+                %>
+              <%= submit_tag "Search", name: "", class: "btn btn-search", type: "submit" %>
+            <% end %>
       </div>
     </nav>
 
