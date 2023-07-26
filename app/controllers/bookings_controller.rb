@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :authenticate_user!
   def index
     @bookings = policy_scope(Booking).includes(:listing)
+    @total_price = calculate_total_booking_price(@bookings)
   end
 
   def show
@@ -40,5 +41,10 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:date_time, :status)
+  end
+
+  def calculate_total_booking_price(bookings)
+    total_price = bookings.sum { |booking| booking.listing.price }
+    return total_price
   end
 end
