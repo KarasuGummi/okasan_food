@@ -8,6 +8,8 @@
             <div class="col">
               <div class="card shadow-sm">
                 <%= image_tag listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
+                <%= image_tag listing.user.photo, class: "avatar-large", alt: "avatar-large"%>
+
                 <div class="card-body">
                   <p class="card-text"> <%= listing.name %> </p>
                   <div class="d-flex justify-content-between align-items-center">

@@ -25,8 +25,7 @@ user1 = User.create!(
   address: Faker::Address.city,
   password: 'secret123'
 )
-file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690375478/tluc7yrasaax5acvd3s7.jpg
-  ')
+file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690375478/tluc7yrasaax5acvd3s7.jpg')
 user1.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 
