@@ -8,7 +8,8 @@
 
 <%# listings %>
 <div class="container">
-  <h3>From Mom's Kitchen with Love: Authentic Flavors, Delivered Fresh</h3>
+  <h3>From Mom's Kitchen with Love ❤️ Authentic Flavors, Delivered Fresh</h3>
+</div>
     <div class="cards">
       <% if @listings.any? %>
         <% @listings.each do |listing| %>
@@ -23,10 +24,11 @@
                 <div class="category-tag">
                   <p><%= listing.category %></p>
                 </div>
-               
+
               </div>
 <%# card-info (name/description)%>
               <div class="description">
+                <img src="https://i.pravatar.cc/" class="mom-avatar-bordered" />
                 <h3><strong><%= listing.name %></strong></h3>
                 <p><%= listing.description %></p>
               </div>
@@ -45,4 +47,3 @@
        <% end %>
      <% end %>
     </div>
-  </div>
