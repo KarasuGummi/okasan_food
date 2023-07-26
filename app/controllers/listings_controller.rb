@@ -2,7 +2,11 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @listings = Listing.all
+    if params[:query].present?
+      @listings = Listing.search_by_name_and_category(params[:query])
+    else
+      @listings = Listing.all
+    end
   end
 
   def new
