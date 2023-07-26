@@ -25,7 +25,9 @@
     <%# mom-card %>
     <div class="mom-card">
       <div class="mom-img">
-        <img src="https://i.pravatar.cc/" />
+        <%= image_tag @listing.user.photo, class: "avatar-large", alt: "avatar-large"%>
+
+
         <h2><%= Faker::Name.name %></h2>
       </div>
       <div class="mom-info">
