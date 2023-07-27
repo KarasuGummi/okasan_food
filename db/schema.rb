@@ -79,10 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_002145) do
     t.boolean "momma"
     t.string "address"
     t.string "password"
-    t.binary "avatar"
-    t.string "fav_cuisine"
-    t.string "occupation"
-    t.string "language"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
