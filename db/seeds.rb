@@ -47,7 +47,7 @@ user3 = User.create!(
   last_name: 'Kato',
   email: 'juri@app.com',
   phone: Faker::PhoneNumber.cell_phone_in_e164,
-  momma: true,
+  momma: false,
   address: Faker::Address.unique.city,
   password: 'secret123'
 )
