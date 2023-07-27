@@ -28,7 +28,6 @@ user1 = User.create!(
 file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690375478/tluc7yrasaax5acvd3s7.jpg')
 user1.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
-
 user2 = User.create!(
   first_name: 'Curtis',
   last_name: 'Lu',
@@ -40,7 +39,6 @@ user2 = User.create!(
 )
 file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690379377/q1t6ql0jmgechpc745zs.jpg')
 user2.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
-
 
 user3 = User.create!(
   first_name: 'Juri',
@@ -65,7 +63,6 @@ user4 = User.create!(
 )
 file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690379287/djiu9onmcmxbyrr0otme.jpg')
 user4.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
-
 
 puts 'Creating listings...'
 
@@ -128,6 +125,26 @@ listing6 = Listing.create!(
 )
 file = URI.open('https://www.livewellbakeoften.com/wp-content/uploads/2021/01/Tiramisu-8s.jpg')
 listing6.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
+
+listing7 = Listing.create!(
+  name: 'Paella',
+  category: 'Spanish',
+  description: 'Rice flavoured with saffron-infused broth and topped with various ingredients.',
+  price: '10000',
+  user: user1
+)
+file = URI.open('https://spanishsabores.com/wp-content/uploads/2020/05/Seafood-Paella-1837-Blog.jpg')
+listing7.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
+
+listing8 = Listing.create!(
+  name: 'Chocolate Chip Cookies',
+  category: 'American',
+  description: 'Soft and chewy treats filled with rich and sweet chocolate chips.',
+  price: '500',
+  user: user2
+)
+file = URI.open('https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg')
+listing8.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
 
 # 9.times do
 #   food = Listing.create!(
