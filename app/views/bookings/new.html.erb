@@ -21,8 +21,8 @@
         <%# <% end %>
 
         <%= simple_form_for ([@listing, @booking]), data: { controller: 'flatpickr' } do |f| %>
-          <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } }, label: "Please choose a date" %>
-          <%= f.input :time, as: :string, input_html: { data: { flatpickr_target: "time" } }, label: "Please choose a time" %>
+          <%= f.input :date, as: :date, html5: true, input_html: { data: { flatpickr_target: "date" } }, label: "Please choose a date" %>
+          <%= f.input :time, as: :time, html5: true, input_html: { data: { flatpickr_target: "time" } }, label: "Please choose a time" %>
           <%= f.submit 'Request Momma!' %>
         <% end %>
 

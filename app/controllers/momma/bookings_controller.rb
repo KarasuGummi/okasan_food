@@ -28,6 +28,6 @@ class Momma::BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date_time, :status, :listing_id, :user_id)
+    params.require(:booking).permit(:date, :time, :status, :listing_id, :user_id)
   end
 end
