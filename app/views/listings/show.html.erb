@@ -10,10 +10,21 @@
     <div class="show-mom-info">
       <h2><%= Faker::Name.name %></h2>
       <ul>
-        <li>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
-        <li>Work: <strong><%= Faker::Job.title %></strong></li>
-        <li>Language: <strong><%= Faker::Nation.language %></strong></li>
+        <li><i class="fa-solid fa-utensils"></i>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
+        <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
+        <li><i class="fa-solid fa-globe"></i>Language: <strong><%= Faker::Nation.language %></strong></li>
       </ul>
+      <div class="show-reviews">
+        <p>Reviews</p>
+        <div id="stars">
+              <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="2"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="3"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="4"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="5"><i class="fa-solid fa-star"></i></span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -21,7 +32,7 @@
   <%# food-card %>
   <div class="show-food-card">
       <% if @listing.photo.attached? %>
-      <%= cl_image_tag @listing.photo.key, height: 350, width: 350, crop: :fill %>
+      <%= cl_image_tag @listing.photo.key%>
     <div class="show-food-info">
       <h2><%= @listing.name %></h2>
       <p>¥<%= @listing.price %></p>
@@ -35,6 +46,9 @@
     </div>
   </div>
 
+  <%# user review %>
+ <div class="show-user-review">
 
   </div>
+</div>
 </div>
