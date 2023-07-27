@@ -1,12 +1,30 @@
 
   <%# food-card %>
-<div class="show-card">
-  <div class="container">
-
+<div class="container-lg">
     <button class="pink-button">
       <%= link_to "< Back", root_path %>
     </button>
 
+    <%# mom-card %>
+  <div class="show-card">
+    <div class="mom-card">
+      <div class="mom-img">
+        <img src="https://i.pravatar.cc/" />
+        <h2><%= Faker::Name.name %></h2>
+      </div>
+
+
+      <div class="mom-info">
+        <h1>Mom's information</h1>
+          <ul>
+            <li>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
+            <li>Work: <strong><%= Faker::Job.title %></strong></li>
+            <li>Language: <strong><%= Faker::Nation.language %></strong></li>
+          </ul>
+      </div>
+    </div>
+
+    <%# food img + description%>
     <% if @listing.photo.attached? %>
       <div class="card-product">
         <%= cl_image_tag @listing.photo.key, height: 280, width: 360, crop: :fill %>
@@ -21,22 +39,5 @@
         </div>
       </div>
     <% end %>
-
-    <%# mom-card %>
-    <div class="mom-card">
-      <div class="mom-img">
-        <img src="https://i.pravatar.cc/" />
-        <h2><%= Faker::Name.name %></h2>
-      </div>
-      <div class="mom-info">
-        <h1>Mom's information</h1>
-          <ul>
-            <li>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
-            <li>Work: <strong><%= Faker::Job.title %></strong></li>
-            <li>Language: <strong><%= Faker::Nation.language %></strong></li>
-          </ul>
-      </div>
-    </div>
-
   </div>
 </div>
