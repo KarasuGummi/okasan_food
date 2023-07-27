@@ -5,8 +5,10 @@
 <div class="show-page-card">
 <%# mom-card %>
   <div class="show-mom-card">
-    <img src="https://i.pravatar.cc/" class="show-mom-img"/>
-        <%# <%= image_tag @listing.user.photo, class: "avatar-large", alt: "avatar-large"%>
+    <div class="show-mom-img">
+    <img src="https://i.pravatar.cc/" />
+        <%# <%= image_tag @listing.user.photo%>
+   </div>
     <div class="show-mom-info">
       <h2><%= Faker::Name.name %></h2>
       <ul>

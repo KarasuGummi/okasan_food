@@ -13,7 +13,7 @@
   padding: 30px;
   border-bottom-style: dashed;
 }
-.show-mom-img {
+.show-mom-img img{
   border-radius: 12px;
   height: 350px;
   width: 350px;
@@ -69,7 +69,7 @@
 
 .show-food-card {
   display: flex;
-  padding: 18px;
+  padding: 20px;
   border-radius: 0 0 12px 12px;
   padding-left: 30px;
 }
@@ -81,9 +81,9 @@
     height: 200px;
     width: 300px;
     object-fit: cover;
-  margin-right: 18px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    margin-right: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // box-shadow: 0 10px 10px 5px rgb(0, 0, 0);
 }
 
@@ -91,7 +91,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 12px;
   padding: 10px;
-
+  width: 100%;
 }
 .show-food-info h2 {
   font-size: 32px;
