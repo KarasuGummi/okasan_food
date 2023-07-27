@@ -1,31 +1,36 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div class="bg-white rounded p-3 shadow">
 
+        <%# <%= simple_form_for([@listing, @booking]) do |f| %>
+          <%#= f.error_notification %>
+          <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <%# <div class=“form-inputs”> %>
+            <%# <%= f.input :date, html5: true, label: "Please choose a date and time" %>
+          <%# </div> %>
 
-<%# form for booking list %>
-<div class=“container m-5”>
-  <div class=“row justify-content-center m-5”>
-    <div class=“col-6">
+          <%# <div class=“form-inputs”>
+            <%= f.input :status %>
+          <%# </div> %>
 
-      <%= simple_form_for([@listing, @booking]) do |f| %>
-        <%= f.error_notification %>
-        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-        <div class=“form-inputs”>
-          <%= f.input :date_time %>
-        </div>
+          <%# <div class=“form-actions”>
+            <%= f.submit "Request Momma!" %>
+          <%# </div> %>
 
-        <%# <div class=“form-inputs”>
-          <%= f.input :status %>
-        <%# </div> %>
+        <%# <% end %>
 
-        <div class=“form-actions”>
-          <%= f.button :submit %>
-        </div>
+        <%= simple_form_for ([@listing, @booking]), data: { controller: 'flatpickr' } do |f| %>
+          <%= f.input :date, as: :string, input_html: { data: { flatpickr_target: "date" } }, label: "Please choose a date" %>
+          <%= f.input :time, as: :string, input_html: { data: { flatpickr_target: "time" } }, label: "Please choose a time" %>
+          <%= f.submit 'Request Momma!' %>
+        <% end %>
 
-      <% end %>
-
+      </div>
     </div>
   </div>
 </div>
 
-  <%# <%= link_to "Submit", bookings_path %>
+<%# <%= link_to "Submit", bookings_path %>
 
-    <%# <%= link_to “Return to all listings”, listings_path %>
+<%# <%= link_to “Return to all listings”, listings_path %>
