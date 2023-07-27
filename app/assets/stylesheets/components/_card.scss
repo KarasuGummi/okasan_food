@@ -1,89 +1,118 @@
-// food-card - food img + discreption
-
-
-.card-product {
-  overflow: hidden;
-  height: 280px;
-  background: white;
+.show-page-card {
+  margin-bottom: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  font-family: $body-font;
-  padding: 12px;
   border-radius: 12px 12px 0 0;
 }
 
-.card-product img {
-  height: 100%;
-  width: 360px;
-  object-fit: cover;
-  margin-right: 15px;
+
+// mom-card
+.show-mom-card {
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  background-color: $light-pink;
+  padding: 30px;
+  border-bottom-style: dashed;
+}
+.show-mom-img img{
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 350px;
+  width: 350px;
+  margin-right: 50px;
+  box-shadow: 0 10px 10px 5px rgb(0, 0, 0);
+  // transition: box-shadow 2s ease-out, transform 1s ease-out;
 }
 
-.card-product-infos {
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 12px;
-  margin: 15px;
-  height: 260px;
+.show-mom-info {
+  width: 100%;
 }
 
-.card-product h2 {
+.show-mom-info h2 {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0;
+  padding: 30px;
+  font-family: $headers-font;
+}
+
+.show-mom-info ul {
+  font-size: 22px;
+  font-family: $body-font;
+}
+
+.show-mom-info li {
+  list-style:none;
+}
+
+.show-mom-info ul i {
+  margin-right:10px
+}
+
+
+// reviews
+.show-reviews {
+  margin-left: 30px;
+}
+
+.show-reviews p {
+  font-size: 20px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#stars {
+  font-size: 20px;
+  // cursor: pointer;
+  font-size: 18px;
+}
+
+// food-card
+
+.show-food-card {
+  display: flex;
+  padding: 20px;
+  border-radius: 0 0 12px 12px;
+  padding-left: 30px;
+}
+
+// .show-food-info {
+  // }
+
+  .show-food-card img {
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    margin-right: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 10px 10px 5px rgb(0, 0, 0);
+}
+
+.show-food-info {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+}
+.show-food-info h2 {
   font-size: 32px;
   font-weight: bold;
   margin: 0;
+  padding: 8px;
+  font-family: $headers-font;
 }
 
-.card-product p {
+.show-food-info p {
   font-size: 20px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-  width: 100%;
+  font-family: $body-font;
+  margin: 0;
+  padding-top: 8px;
+  padding-left: 8px;
 }
 
-.card-product .card-product-infos {
-  padding: 16px;
-  width: 100%;
+.request-pink-button {
+  text-align:right;
 }
-
-// mom-card
-.mom-img {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  background-color: white;
-  border-bottom:  rgb(225, 224, 224);
-  border-bottom-style: dashed;
-}
-
-.mom-img img{
-  border-radius: 50px;
-  margin-left: 30px;
-  width: 72px;
-  height: 72px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.mom-img h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding: 30px;
-  }
-
-.mom-info {
-  align-items: center;
-  background-color: white;
-  height: 200px;
-  padding: 30px;
-  border-radius: 0 0 12px 12px;
-}
-
-.mom-info h1 {
-  margin-bottom: 20px;
+.request-pink-button .pink-button {
+  font-size: 20px;
+  margin: 10px 20px;
 }

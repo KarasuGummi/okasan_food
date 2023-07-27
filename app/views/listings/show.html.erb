@@ -1,44 +1,56 @@
-
-  <%# food-card %>
-<div class="show-card">
-  <div class="container">
-
-    <button class="pink-button">
-      <%= link_to "< Back", root_path %>
-    </button>
-
-    <% if @listing.photo.attached? %>
-      <div class="card-product">
-        <%= cl_image_tag @listing.photo.key, height: 280, width: 360, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= @listing.name %></h2>
-          <p>¥<%= @listing.price %></p>
-          <p><%= @listing.description %></p>
-
-          <button class="pink-button">
-            <%= link_to "Request", new_listing_booking_path(@listing) %>
-          </button>
+<div class="container-lg">
+  <button class="pink-button">
+    <%= link_to "< Back", root_path %>
+  </button>
+<div class="show-page-card">
+<%# mom-card %>
+  <div class="show-mom-card">
+    <div class="show-mom-img">
+    <img src="https://i.pravatar.cc/" />
+        <%# <%= image_tag @listing.user.photo%>
+   </div>
+    <div class="show-mom-info">
+      <h2><%= Faker::Name.name %></h2>
+      <ul>
+        <li><i class="fa-solid fa-utensils"></i>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
+        <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
+        <li><i class="fa-solid fa-globe"></i>Language: <strong><%= Faker::Nation.language %></strong></li>
+      </ul>
+      <div class="show-reviews">
+        <p>Reviews</p>
+        <div id="stars">
+              <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="2"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="3"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="4"><i class="fa-solid fa-star"></i></span>
+              <span class="star" data-star="5"><i class="fa-solid fa-star"></i></span>
         </div>
       </div>
-    <% end %>
 
-    <%# mom-card %>
-    <div class="mom-card">
-      <div class="mom-img">
-        <%= image_tag @listing.user.photo, class: "avatar-large", alt: "avatar-large"%>
+    </div>
+  </div>
 
 
-        <h2><%= Faker::Name.name %></h2>
-      </div>
-      <div class="mom-info">
-        <h1>Mom's information</h1>
-          <ul>
-            <li>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
-            <li>Work: <strong><%= Faker::Job.title %></strong></li>
-            <li>Language: <strong><%= Faker::Nation.language %></strong></li>
-          </ul>
+  <%# food-card %>
+  <div class="show-food-card">
+      <% if @listing.photo.attached? %>
+      <%= cl_image_tag @listing.photo.key%>
+    <div class="show-food-info">
+      <h2><%= @listing.name %></h2>
+      <p>¥<%= @listing.price %></p>
+      <p><%= @listing.description %></p>
+      <% end %>
+      <div class="request-pink-button">
+        <button class="pink-button">
+        <%= link_to "Request", new_listing_booking_path(@listing) %>
+        </button>
       </div>
     </div>
+  </div>
+
+  <%# user review %>
+ <div class="show-user-review">
 
   </div>
+</div>
 </div>
