@@ -7,5 +7,11 @@ import { application } from "./application"
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
+import FormSubmitController from "./form_submit_controller"
+application.register("form-submit", FormSubmitController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)

@@ -2,6 +2,7 @@
   margin-bottom: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 12px 12px 0 0;
+
 }
 
 
@@ -9,9 +10,10 @@
 .show-mom-card {
   border-radius: 12px 12px 0 0;
   display: flex;
-  background-color: $light-pink;
+  background-color:#f8dddd;
+
   padding: 30px;
-  border-bottom-style: dashed;
+  // border-bottom-style: ridge;
 }
 .show-mom-img img{
   border-radius: 12px;
@@ -48,30 +50,34 @@
 }
 
 
-// reviews
-.show-reviews {
-  margin-left: 30px;
-}
+// // reviews
+// .show-reviews {
+//   margin-left: 30px;
+// }
 
-.show-reviews p {
-  font-size: 20px;
-  text-decoration: underline;
-  font-weight: bold;
-}
+// .show-reviews p {
+//   font-size: 20px;
+//   text-decoration: underline;
+//   font-weight: bold;
+// }
 
-#stars {
-  font-size: 20px;
-  // cursor: pointer;
-  font-size: 18px;
-}
+// #stars {
+//   font-size: 20px;
+//   // cursor: pointer;
+//   font-size: 18px;
+// }
 
 // food-card
 
 .show-food-card {
   display: flex;
   padding: 20px;
-  border-radius: 0 0 12px 12px;
+  // border-radius: 0 0 12px 12px;
   padding-left: 30px;
+  border-bottom-style: ridge;
+  opacity: 0.7;
+  // background-color: $light-pink;
+
 }
 
 // .show-food-info {
@@ -92,6 +98,7 @@
   border-radius: 12px;
   padding: 10px;
   width: 100%;
+  background-color: white;
 }
 .show-food-info h2 {
   font-size: 32px;
@@ -115,4 +122,47 @@
 .request-pink-button .pink-button {
   font-size: 20px;
   margin: 10px 20px;
+}
+
+// user-reviews
+.reviews {
+  background-color: #f8f0ea;
+  padding: 30px;
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.show-user-review {
+  line-height: 30px;
+  width: 650px;
+
+  p {
+    margin: 0;
+  }
+
+  p:last-child {
+    border-bottom-style: ridge;
+    opacity: 0.7;
+  }
+
+  h2 {
+    font-family: $headers-font;
+    font-weight: bold;
+  }
+
+}
+
+// Create review form
+.reviews-form{
+  margin-top: 30px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  width: 550px;
+}
+
+#stars {
+  margin-top: 15px;
 }

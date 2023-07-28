@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index" i lik dumplings
   resources :listings, only: %i[index show new create destroy] do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: %i[new create]
   end
   resources :bookings, only: %i[index edit destroy update]
 
