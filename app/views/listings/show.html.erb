@@ -6,11 +6,14 @@
 <%# mom-card %>
   <div class="show-mom-card">
     <div class="show-mom-img">
-    <img src="https://i.pravatar.cc/" />
+        <%# <img src="https://i.pravatar.cc/" /> %>
         <%# <%= image_tag @listing.user.photo%>
+        <%= cl_image_tag @listing.user.photo.key, crop: :fill %>
+
    </div>
     <div class="show-mom-info">
-      <h2><%= Faker::Name.name %></h2>
+      <%# <h2><%= Faker::Name.name %>
+      <h2><%= "#{@listing.user.first_name} #{@listing.user.last_name}"  %></h2>
       <ul>
         <li><i class="fa-solid fa-utensils"></i>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
         <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
