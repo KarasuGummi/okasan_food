@@ -1,23 +1,27 @@
 <div class="album py-5 bg-body-tertiary">
   <div class="container">
-    <h1 class="text-center">My Listings</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <h1 class="text-center">My Dishes</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
       <% if @listings.any? %>
         <% @listings.each do |listing| %>
           <% if listing.photo.attached? %>
             <div class="col">
-              <div class="card shadow-sm">
-                <%= image_tag listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
-                <%= image_tag listing.user.photo, class: "avatar-large", alt: "avatar-large"%>
+              <div class="card shadow-sm card-listing">
+                <%= image_tag listing.photo, class: "card-listing-img bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
+                <%= image_tag listing.user.photo, class: "avatar-large listings-avatar", alt: "avatar-large"%>
 
                 <div class="card-body">
-                  <p class="card-text"> <%= listing.name %> </p>
+                  <h5 class="listing-name"> <strong> <%= listing.name %> </strong> </h5>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
+                      <%= link_to listing_path(listing), class: "view-link", data: { turbo_method: :get} do %>
+                        <h5><i class="fa-solid fa-circle-info"></i></h5>
+                      <% end %>
+                      <%= link_to listing_path(listing), class: "delete-link", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                        <h5><i class="fa-solid fa-trash"></i></h5>
+                      <% end %>
                     </div>
-                    <small class="text-body-secondary"> <%= listing.price %>JPY</small>
+                    <small class="listing-price"> <%= listing.price %>JPY</small>
                   </div>
                 </div>
               </div>
