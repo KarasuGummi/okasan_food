@@ -32,7 +32,7 @@
   background-color: $light-gray;
 }
 
-.card-horizontal-pricing {
+.card-horizontal-status-2 {
   width: 30%;
   padding: 10px;
   background-color: $light-gray;
@@ -54,11 +54,15 @@
   color: $red;
 }
 
-.card-horizontal-status-1{
-  color: $red;
-  margin-top: 45px;
-}
 
 .delete-link{
   color: $orange-pink;
+}
+
+.card-horizontal-date{
+  margin-top: 10px;
+}
+
+.card-horizontal-price{
+  margin-top: 40px;
 }
