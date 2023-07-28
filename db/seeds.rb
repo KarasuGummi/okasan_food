@@ -25,7 +25,7 @@ user1 = User.create!(
   address: Faker::Address.city,
   password: 'secret123'
 )
-file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690375478/tluc7yrasaax5acvd3s7.jpg')
+file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690418678/development/3oepwtaltqbpfxmqts4icuqz257m.jpg')
 user1.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user2 = User.create!(
@@ -37,7 +37,7 @@ user2 = User.create!(
   address: Faker::Address.unique.city,
   password: 'secret123'
 )
-file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690379377/q1t6ql0jmgechpc745zs.jpg')
+file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690418683/development/b5sn6k1g5az9ye8nitvfr3dsigrb.jpg')
 user2.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user3 = User.create!(
@@ -49,7 +49,7 @@ user3 = User.create!(
   address: Faker::Address.unique.city,
   password: 'secret123'
 )
-file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690378592/qwn6pwpzwvsg3ydweeqm.jpg')
+file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690418673/development/gq7d3la5mukemfggvmtx1nexustk.jpg')
 user3.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user4 = User.create!(
@@ -61,7 +61,7 @@ user4 = User.create!(
   address: Faker::Address.unique.city,
   password: 'secret123'
 )
-file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1690379287/djiu9onmcmxbyrr0otme.jpg')
+file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/v1690418669/development/uvxwdkmayuov95fojamxxkcjhqxh.jpg')
 user4.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 puts 'Creating listings...'
