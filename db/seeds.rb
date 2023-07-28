@@ -17,9 +17,9 @@ puts 'Database cleaned!'
 puts 'Creating users...'
 
 user1 = User.create!(
-  first_name: 'Kevin',
-  last_name: 'Collier',
-  email: 'kevin@app.com',
+  first_name: 'Aya',
+  last_name: 'Tanaka',
+  email: 'aya@app.com',
   phone: Faker::PhoneNumber.cell_phone_in_e164,
   momma: true,
   address: Faker::Address.city,
@@ -29,9 +29,9 @@ file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill
 user1.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user2 = User.create!(
-  first_name: 'Curtis',
-  last_name: 'Lu',
-  email: 'curtis@app.com',
+  first_name: 'Yuki',
+  last_name: 'Nakamura',
+  email: 'yuki@app.com',
   phone: Faker::PhoneNumber.cell_phone_in_e164,
   momma: true,
   address: Faker::Address.unique.city,
@@ -41,9 +41,9 @@ file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill
 user2.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user3 = User.create!(
-  first_name: 'Juri',
-  last_name: 'Kato',
-  email: 'juri@app.com',
+  first_name: 'polly',
+  last_name: 'wigglesworth',
+  email: 'polly@app.com',
   phone: Faker::PhoneNumber.cell_phone_in_e164,
   momma: true,
   address: Faker::Address.unique.city,
@@ -53,9 +53,9 @@ file = URI.open('https://res.cloudinary.com/du53mgiot/image/upload/w_1000,c_fill
 user3.photo.attach(io: file, filename: 'profile1.jpg', content_type: 'image/png')
 
 user4 = User.create!(
-  first_name: 'Favi',
-  last_name: 'Fernandez',
-  email: 'favi@app.com',
+  first_name: 'emily',
+  last_name: 'johnson',
+  email: 'emily@app.com',
   phone: Faker::PhoneNumber.cell_phone_in_e164,
   momma: false,
   address: Faker::Address.unique.city,
