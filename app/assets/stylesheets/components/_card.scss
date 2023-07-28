@@ -73,6 +73,7 @@
   // border-radius: 0 0 12px 12px;
   padding-left: 30px;
   border-bottom-style: ridge;
+  opacity: 0.7;
 }
 
 // .show-food-info {
@@ -128,11 +129,17 @@
 
 .show-user-review {
   line-height: 30px;
-  width: 600px;
+  width: 650px;
 
   p {
     margin: 0;
   }
+
+  p:last-child {
+    border-bottom-style: ridge;
+    opacity: 0.7;
+  }
+
   h2 {
     font-family: $headers-font;
     font-weight: bold;
@@ -148,4 +155,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 12px;
   width: 550px;
+}
+
+#stars {
+  margin-top: 15px;
 }
