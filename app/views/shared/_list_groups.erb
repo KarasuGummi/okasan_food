@@ -1,31 +1,35 @@
 <div class="album py-5 bg-body-tertiary">
-  <div class="container">
-   <p>Total price booking: <%= @total_price %> JPY</p>
-    <h1 class="text-center">My Requests</h1>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <% if @bookings.any? %>
-        <% @bookings.each do |booking| %>
-          <% if booking.listing.photo.attached? %>
-            <div class="col">
-              <div class="card shadow-sm">
-                <%= image_tag booking.listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
-                <div class="card-body">
-                  <p class="card-text"> <%= booking.listing.name %> </p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
-                    </div>
-                    <small class="text-body-secondary"> <%= booking.listing.price %>JPY</small>
-                  </div>
-                </div>
+<h1 class="text-center my-orders">My Orders</h1>
+  <div class="card-container">
+    <% if @bookings.any? %>
+      <% @bookings.each do |booking| %>
+        <% if booking.listing.photo.attached? %>
+          <div class="card-horizontal">
+            <div class="card-horizontal-image">
+              <%= image_tag booking.listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
+            </div>
+            <div class="card-horizontal-text">
+              <h4 class="card-horizontal-title"> <%= booking.listing.name %> </h4>
+              <h5 class="card-horizontal-momma"> Made by:  <%= "#{booking.listing.user.first_name} #{booking.listing.user.last_name}" %> </h5>
+              <small> <%= booking.listing.description %></small>
+              <div class="card-horizontal-status-1">
+                <small> Status: <%= booking.status %></small>
               </div>
             </div>
-          <% end %>
+            <div class="card-horizontal-pricing">
+              <p> <%= booking.listing.price %>JPY</p>
+                <% if booking.status == "pending" %>
+                  <%= link_to booking_path(booking), class: "delete-link", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                    <small>Delete  </small><i class="fa-solid fa-trash"></i>
+                  <% end %>
+                <% end %>
+            </div>
+          </div>
         <% end %>
-      <% else %>
-        <p>You don't have any requests.</p>
       <% end %>
+    <% end %>
+    <div class="price-container">
+      <p>Total Price: <strong><%= @total_price %> JPY </strong></p>
     </div>
   </div>
 </div>
