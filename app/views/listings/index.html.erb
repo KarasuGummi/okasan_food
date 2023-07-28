@@ -29,7 +29,7 @@
 <%# card-info (name/description)%>
               <div class="description">
                 <%# <img src="https://i.pravatar.cc/" class="mom-avatar-bordered" /> %>
-                <%= cl_image_tag listing.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-large listings-avatar"%>
+                <%= cl_image_tag listing.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "mom-avatar-bordered"%>
 
                 <h3><strong><%= listing.name %></strong></h3>
                 <p><%= listing.description %></p>
