@@ -1,0 +1,32 @@
+.card-listing{
+  position: relative;
+}
+
+.card-listing-img{
+  width: 100%;
+  min-height: 100;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border: none;
+}
+
+.listing-name{
+  color: $orange-pink;
+}
+
+.listing-price{
+  color: $red;
+}
+
+.listings-avatar{
+  position: absolute;
+  top: 185px;
+  right: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
