@@ -11,7 +11,7 @@
   display: flex;
   background-color: $light-pink;
   padding: 30px;
-  border-bottom-style: dashed;
+  // border-bottom-style: ridge;
 }
 .show-mom-img img{
   border-radius: 12px;
@@ -48,30 +48,31 @@
 }
 
 
-// reviews
-.show-reviews {
-  margin-left: 30px;
-}
+// // reviews
+// .show-reviews {
+//   margin-left: 30px;
+// }
 
-.show-reviews p {
-  font-size: 20px;
-  text-decoration: underline;
-  font-weight: bold;
-}
+// .show-reviews p {
+//   font-size: 20px;
+//   text-decoration: underline;
+//   font-weight: bold;
+// }
 
-#stars {
-  font-size: 20px;
-  // cursor: pointer;
-  font-size: 18px;
-}
+// #stars {
+//   font-size: 20px;
+//   // cursor: pointer;
+//   font-size: 18px;
+// }
 
 // food-card
 
 .show-food-card {
   display: flex;
   padding: 20px;
-  border-radius: 0 0 12px 12px;
+  // border-radius: 0 0 12px 12px;
   padding-left: 30px;
+  border-bottom-style: ridge;
 }
 
 // .show-food-info {
@@ -115,4 +116,36 @@
 .request-pink-button .pink-button {
   font-size: 20px;
   margin: 10px 20px;
+}
+
+// user-reviews
+.reviews {
+  // background-color: $light-pink;
+  padding: 30px;
+  display:flex;
+  justify-content: space-between;
+}
+
+.show-user-review {
+  line-height: 30px;
+  width: 600px;
+
+  p {
+    margin: 0;
+  }
+  h2 {
+    font-family: $headers-font;
+    font-weight: bold;
+  }
+
+}
+
+// Create review form
+.reviews-form{
+  margin-top: 30px;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  width: 550px;
 }

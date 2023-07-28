@@ -1,4 +1,4 @@
-<div class="container-lg">
+<div class="container">
   <button class="pink-button">
     <%= link_to "< Back", root_path %>
   </button>
@@ -16,16 +16,7 @@
         <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
         <li><i class="fa-solid fa-globe"></i>Language: <strong><%= Faker::Nation.language %></strong></li>
       </ul>
-      <%# <div class="show-reviews">
-        <p>Reviews</p>
-        <div id="stars">
-              <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-star="2"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-star="3"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-star="4"><i class="fa-solid fa-star"></i></span>
-              <span class="star" data-star="5"><i class="fa-solid fa-star"></i></span>
-        </div>
-      </div> %>
+
 
     </div>
   </div>
@@ -50,31 +41,38 @@
 
 
    <!-- user review -->
+   <div class="reviews">
     <div class="show-user-review">
       <h2>Reviews</h2>
       <% if @listing.reviews.any? %>
         <% @listing.reviews.each do |review| %>
           <div class="review">
-            <p><strong><%= review.user.first_name %> <%= review.user.last_name %></strong></p>
-            <p><%= review.content %></p>
             <div id="stars">
               <% review.rating.times do %>
                 <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
               <% end %>
             </div>
+            <p><strong><%= review.user.first_name %> <%= review.user.last_name %></strong></p>
+            <p><%= review.content %></p>
           </div>
         <% end %>
       <% else %>
         <p>No reviews yet.</p>
       <% end %>
+      </div>
+
+
 
 <!-- Review Form -->
-      <h2>Add a Review</h2>
-      <%# <%= simple_form_for [@listing, Review.new] do |f| %>
-    <%= simple_form_for [@listing, Review.new] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: { data: { controller: "star-rating", action: "click->form-submit#submit" } } %>
-  <%= f.submit class: "d-none" %>
-<% end %>
-    </div>
+<div class="reviews-form">
+  <h2>Add a Review</h2>
+  <%= simple_form_for [@listing, Review.new] do |f| %>
+    <%= f.input :content%>
+    <%= f.input :rating, collection: (1..5).to_a, label: "Create review", input_html: {data: { controller: "star-rating", action: "click->form-submit#submit"} } %>
+    <%= f.submit "Submit", class: "d-none" %>
+  <% end %>
 </div>
+</div>
+</div>
+</div>
+
