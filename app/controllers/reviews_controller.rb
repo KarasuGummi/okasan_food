@@ -4,15 +4,19 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    @listing = Listing.find(params[:listing_id])
+    @review = @listing.reviews.new(review_params)
     @review.user = current_user
+
+    authorize @review
+    
     if @review.save
     #   redirect_to new_review_path
     # else
       # flash[:alert] = "Something went wrong."
       # render :new
       flash[:notice] = "Review created successfully!"
-      redirect_to listing_path(@review.listing)  # Replace "listing" with the appropriate resource name
+      redirect_to listing_path(@listing)
     else
       flash[:alert] = "Something went wrong."
       render :new
