@@ -9,7 +9,7 @@
               <%= image_tag booking.listing.photo, class: "bd-placeholder-img card-img-top", alt: "Thumbnail", style: "width: 100%; height: 225px;" %>
             </div>
             <div class="card-horizontal-text">
-              <h4 class="card-horizontal-title"> <%= booking.listing.name %> </h4>
+              <h2 class="card-horizontal-title"> <%= booking.listing.name %> </h2>
               <h5 class="card-horizontal-momma"> Made by:  <%= "#{booking.listing.user.first_name} #{booking.listing.user.last_name}" %> </h5>
               <small> <%= booking.listing.description %></small>
               <div class="card-horizontal-status-1">
@@ -33,5 +33,3 @@
     </div>
   </div>
 </div>
-
-

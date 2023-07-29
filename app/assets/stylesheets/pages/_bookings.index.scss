@@ -37,7 +37,12 @@
   padding: 10px;
   background-color: $light-gray;
   text-align: right;
-  color: $orange-pink;
+  color: $gray;
+  font-size: 25px;
+}
+
+.card-horizontal-title {
+  font-weight: bold;
 }
 
 .price-container {
@@ -55,8 +60,9 @@
 }
 
 .card-horizontal-status-1{
-  color: $red;
+  color: black;
   margin-top: 45px;
+  font-size: 20px;
 }
 
 .delete-link{
