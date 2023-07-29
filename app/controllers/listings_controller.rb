@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @average = @listing.reviews.map { |review| review.rating }.sum / @listing.reviews.count
     authorize @listing
   end
 
