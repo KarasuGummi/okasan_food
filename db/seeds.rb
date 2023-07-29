@@ -192,7 +192,7 @@ Review.create!(
 )
 
 Review.create!(
-  content: `It's a great paella, but not worth the hefty price.`,
+  content: 'A great paella, but not worth the hefty price.',
   rating: 2,
   user: user1,
   listing: listing7
