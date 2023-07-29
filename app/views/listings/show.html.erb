@@ -18,21 +18,16 @@
         <li><i class="fa-solid fa-utensils"></i>Favorite cuisine to cook: <strong><%= Faker::Food.ethnic_category %></strong></li>
         <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
         <li><i class="fa-solid fa-globe"></i>Language: <strong><%= Faker::Nation.language %></strong></li>
-        <li><%= @average %></li>
-      </ul>
-
-      <div class="show-mom-review">
-
-        <% if @review %>
-          <% @review.rating.times do %>
-            <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
+        <p>Reviews</p>
+        <li><% @average.round.times do %>
+          <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
           <% end %>
-        <% end %>
+      </ul>
     </div>
   </div>
- </div>
 
-  <%# food-card %>
+
+<%# food-card %>
   <div class="show-food-card">
       <% if @listing.photo.attached? %>
       <%= cl_image_tag @listing.photo.key%>

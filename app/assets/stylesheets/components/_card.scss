@@ -75,8 +75,7 @@
   // border-radius: 0 0 12px 12px;
   padding-left: 30px;
   border-bottom-style: ridge;
-  // opacity: 0.7;
-  // background-color: $light-pink;
+  background-color: white;
 
 }
 
@@ -161,8 +160,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 12px;
   width: 550px;
+  height: 300px;
+
 }
 
 #stars {
   margin-top: 15px;
+  color: rgb(230, 159, 6);
+}
+
+.show-mom-info li:last-child {
+  margin: 15px 0;
+  color: rgb(230, 159, 6);
+}
+
+.show-mom-info ul p{
+  margin: 15px 0;
 }
