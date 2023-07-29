@@ -4,12 +4,14 @@
   flex-direction: column;
   width: 85%;
   margin: auto;
+
 }
 
 .card-horizontal {
   display: flex;
   border-radius: 5px;
   padding: 10px;
+  margin: 0 50px;
 }
 
 .card-horizontal-image {
@@ -28,13 +30,13 @@
 
 .card-horizontal-text {
   width: 40%;
-  padding: 10px;
+  padding-left: 20px;
   background-color: $light-gray;
 }
 
 .card-horizontal-status-2 {
   width: 30%;
-  padding: 10px;
+  padding: 30px;
   background-color: $light-gray;
   text-align: right;
   color: $orange-pink;
@@ -44,6 +46,8 @@
   padding: 20px;
   text-align: right;
   color: $orange-pink;
+  font-size: 35px;
+
 }
 
 .card-horizontal-momma{
@@ -60,4 +64,12 @@
 
 .card-horizontal-price{
   margin-top: 40px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.horizontal-buttons {
+  display: flex;
+  padding: 15px;
+  width: 100px;
 }
