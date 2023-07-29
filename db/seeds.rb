@@ -146,6 +146,15 @@ listing8 = Listing.create!(
 file = URI.open('https://handletheheat.com/wp-content/uploads/2020/10/BAKERY-STYLE-CHOCOLATE-CHIP-COOKIES-9-637x637-1.jpg')
 listing8.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
 
+puts 'Creating reviews...'
+
+Review.create!(
+  content: Faker::Restaurant.review,
+  rating: rand(1..5),
+  user: user1,
+  listing: listing1
+)
+
 # 9.times do
 #   food = Listing.create!(
 #     name: Faker::Food.dish,
