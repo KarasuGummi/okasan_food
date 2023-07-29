@@ -28,7 +28,7 @@ class ListingsController < ApplicationController
     @listing.user = current_user
     authorize @listing
     if @listing.save
-      redirect_to momma_bookings_path
+      redirect_to momma_listings_path
     else
       puts @listing.errors.full_messages
       render 'new'

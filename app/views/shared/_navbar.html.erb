@@ -16,25 +16,24 @@
     </nav>
     <% if current_user %>
       <% if current_user.momma? %>
-        <div class="d-flex gap-2">
-          <span> <%= link_to "Your dishes", momma_listings_path, class: "badge text-bg-secondary" %> </span>
-          <span> <%= link_to "Your bookings", momma_bookings_path, class: "badge text-bg-danger"%> </span>
-          <span> <%= link_to "Share your dish", new_listing_path, class: "badge text-bg-warning" %> </span>
-          <span> <%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete }, class: "badge text-bg-dark" %> </span>
+        <div class="d-flex">
+          <%= link_to "Your dishes", momma_listings_path, class: "btn btn-outline-info text-dark" %>
+          <%= link_to "Your bookings", momma_bookings_path, class: "btn btn-outline-info text-dark"%>
+          <%= link_to "Share your dish", new_listing_path, class: "btn btn-outline-info text-dark" %>
+          <%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete }, class: "btn btn-outline-danger text-dark" %>
         </div>
       <%# after sign in / other menu items for user %>
       <% else %>
         <div class="d-flex gap-2">
-          <span> <%= link_to "My Requests",  bookings_path, class: "badge text-bg-warning" %> </span>
-          <span> <%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete }, class: "badge text-bg-dark" %> </span>
+          <%= link_to "My Requests",  bookings_path, class: "btn btn-outline-info text-dark" %>
+          <%= link_to "Sign out",  destroy_user_session_path , data: { "turbo-method": :delete }, class: "btn btn-outline-danger text-dark" %>
         </div>
       <% end %>
       <%# before sign in %>
     <% else %>
-      <div class="d-flex gap-3">
-        <span> <%= link_to "Momma's Site", new_user_session_path, class: "badge text-bg-warning" %> </span>
-        <span> <%= link_to "Your page", new_user_session_path, class: "badge text-bg-danger" %> </span>
-        <%# link_to "Sign up", new_user_registration_path %>
+      <div class="d-flex gap-4">
+        <%= link_to "Momma's Site", new_user_session_path, class: "btn btn-outline-success text-dark" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-info text-dark" %>
       </div>
     <% end %>
   </div>
