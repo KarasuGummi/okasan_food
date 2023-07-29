@@ -7,6 +7,7 @@
           <%= f.input :name, placeholder: 'Dish name' %>
           <%= f.input :category, placeholder: 'Cuisine type' %>
           <%= f.input :price, as: :float %>
+          <%= f.input :description, as: :text %>
           <%= f.input :photo, as: :file %>
           <%= f.submit class: 'btn btn-warning' %>
         <% end %>
