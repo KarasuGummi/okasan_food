@@ -191,6 +191,48 @@ Review.create!(
   listing: listing8
 )
 
+Review.create!(
+  content: `It's a great paella, but not worth the hefty price.`,
+  rating: 2,
+  user: user1,
+  listing: listing7
+)
+
+Review.create!(
+  content: 'She drew a cute cat with ketchup on my omurice! How did she know that I love cats?',
+  rating: 5,
+  user: user1,
+  listing: listing1
+)
+
+Review.create!(
+  content: 'I was given a variety of choices to make the dish personal to me! By the end, I got to enjoy a spicy buffalo chicken mac & cheese.',
+  rating: 5,
+  user: user2,
+  listing: listing2
+)
+
+Review.create!(
+  content: 'My mouth is on fire!!! 🔥🔥🔥🔥🔥',
+  rating: 4,
+  user: user3,
+  listing: listing3
+)
+
+Review.create!(
+  content: 'It was sloppily constructed with no care for appearance at all... Just like how my mom would make it!',
+  rating: 5,
+  user: user3,
+  listing: listing6
+)
+
+Review.create!(
+  content: 'She was late and ruined the first batch of cookies. Would not recommend.',
+  rating: 1,
+  user: user2,
+  listing: listing8
+)
+
 # 9.times do
 #   food = Listing.create!(
 #     name: Faker::Food.dish,
