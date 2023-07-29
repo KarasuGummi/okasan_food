@@ -10,7 +10,7 @@
                     class: "form-control me-2",
                     placeholder: "Search for food"
                 %>
-              <%= submit_tag "Search", name: "", class: "btn btn-warning", type: "submit" %>
+              <%= submit_tag "Search", name: "", class: "btn btn-search", type: "submit" %>
             <% end %>
       </div>
     </nav>
@@ -31,10 +31,20 @@
       <% end %>
       <%# before sign in %>
     <% else %>
-      <div class="d-flex gap-4">
+      <%# <div class="d-flex gap-4">
         <%= link_to "Momma's Site", new_user_session_path, class: "btn btn-outline-success text-dark" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-info text-dark" %>
+        <%# <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-info text-dark" %>
+      <%# </div> %>
+    <%# <% end %>
+     <div class="d-flex gap-2" >
+        <button class="btn-login" type="button">
+          <%= link_to "Sign in", new_user_session_path %>
+        </button>
+        <button class="btn-login" type="button">
+          <%= link_to "Sign up", new_user_registration_path %>
+        </button>
       </div>
     <% end %>
+
   </div>
 </div>
