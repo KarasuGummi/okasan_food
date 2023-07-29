@@ -83,7 +83,7 @@ listing2 = Listing.create!(
   price: '1500',
   user: user2
 )
-file = URI.open('https://www.washingtonpost.com/resizer/kvKDeOnyO3uTdozUijZtRg_AYyE=/arc-anglerfish-washpost-prod-washpost/public/JLFY2YFBR24TY4ZDEJRM4FMKDI.jpg')
+file = URI.open('https://insanelygoodrecipes.com/wp-content/uploads/2022/05/Old-Fashioned-Macaroni-and-Cheese-in-a-Casserole.jpg')
 listing2.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
 
 listing3 = Listing.create!(
