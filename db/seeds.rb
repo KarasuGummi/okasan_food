@@ -149,10 +149,45 @@ listing8.photo.attach(io: file, filename: 'food.png', content_type: 'image/png')
 puts 'Creating reviews...'
 
 Review.create!(
-  content: Faker::Restaurant.review,
-  rating: rand(1..5),
+  content: 'Took me back to my childhood!',
+  rating: 5,
   user: user1,
   listing: listing1
+)
+
+Review.create!(
+  content: 'Both the dish and the momma could have used more spice in my opinion.',
+  rating: 3,
+  user: user1,
+  listing: listing4
+)
+
+Review.create!(
+  content: 'This could be a weird take, but it tasted too good. It tasted like restaurant-quality and I wished it had a more home cooking vibe...',
+  rating: 2,
+  user: user2,
+  listing: listing2
+)
+
+Review.create!(
+  content: 'Tasted almost as good as my moms own cooking!',
+  rating: 4,
+  user: user1,
+  listing: listing1
+)
+
+Review.create!(
+  content: 'The momma made me feel like I was her own daughter! She was the best!',
+  rating: 5,
+  user: user3,
+  listing: listing6
+)
+
+Review.create!(
+  content: 'The cookies were burnt which left a bad taste in my mouth...',
+  rating: 1,
+  user: user2,
+  listing: listing8
 )
 
 # 9.times do
