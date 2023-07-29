@@ -19,9 +19,12 @@
         <li><i class="fa-solid fa-suitcase"></i>Work: <strong><%= Faker::Job.title %></strong></li>
         <li><i class="fa-solid fa-globe"></i>Language: <strong><%= Faker::Nation.language %></strong></li>
         <p>Reviews</p>
+        <div class="average-star">
         <li><% @average.round.times do %>
           <span class="star" data-star="1"><i class="fa-solid fa-star"></i></span>
           <% end %>
+          <%= @average %>
+          </div>
       </ul>
     </div>
   </div>
