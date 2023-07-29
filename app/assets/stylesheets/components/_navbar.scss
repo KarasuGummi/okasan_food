@@ -32,15 +32,30 @@
   border-width: 80;
   border-radius: 4px;
   background-color: white;
+  color: black;
+
+  &:hover {
+    background: $orange-pink;
+    color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+  }
+
 }
 
-// login button
+// before sign-in
 .btn-login {
   background-color: white;
   border-color: gray;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
+  color: black;
+
+  &:hover {
+    background: $orange-pink;
+    color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+  }
 }
 img {
   width: 35px;
